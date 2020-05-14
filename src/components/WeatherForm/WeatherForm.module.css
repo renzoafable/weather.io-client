@@ -1,0 +1,4 @@
+.CustomControl:focus {
+  box-shadow: none;
+  outline: 0 none;
+}

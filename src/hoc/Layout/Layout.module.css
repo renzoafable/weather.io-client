@@ -7,4 +7,5 @@
 .MainContent {
   flex-grow: 1;
   height: 100%;
+  margin-top: 5rem;
 }
