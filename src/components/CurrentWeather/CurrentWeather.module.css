@@ -1,0 +1,28 @@
+.CurrentWeather {
+  background-color: var(--main-dark-color);
+  background-image: url(../../assets/images/clouds.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding-top: 2rem;
+  position: relative;
+}
+
+.CurrentWeatherItem {
+  margin: 5px 0;
+}
+
+.CurrentLocation {
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-overflow: ellipsis;
+}
+
+.Spinner {
+  visibility: hidden;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}

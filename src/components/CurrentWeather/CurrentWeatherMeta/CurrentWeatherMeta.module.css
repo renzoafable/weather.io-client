@@ -1,0 +1,12 @@
+.CurrentWeatherMeta {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.CurrentWeatherMeta span {
+  margin: 0 6px;
+}
+
+.CurrentWeatherMeta img {
+  width: 4px;
+}

@@ -1,0 +1,19 @@
+.CurrentWeatherDateIcon {
+  width: 60px;
+  height: 60px;
+}
+
+.Today,
+.CurrDate {
+  line-height: 150%;
+  text-align: left;
+}
+
+.Today {
+  font-size: 1.3rem;
+}
+
+.CurrDate {
+  font-size: 0.7rem;
+  font-weight: 300;
+}

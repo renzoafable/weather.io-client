@@ -1,0 +1,9 @@
+.CurrentWeatherDetailsItem {
+  width: 85%;
+}
+
+.DottedDivider {
+  border-bottom: 2px dotted #888;
+  height: 2px;
+  flex-grow: 1;
+}

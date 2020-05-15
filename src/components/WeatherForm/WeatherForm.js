@@ -9,20 +9,21 @@ import InputGroup from 'react-bootstrap/InputGroup';
 
 const WeatherForm = (props) => {
   return (
-    <Form onSubmit={props.submitLocation}>
-      <InputGroup
-        size='lg'
-        className='bg-white shadow rounded mt-3 mb-4 p-1 w-50 mx-auto'>
+    <Form
+      onSubmit={props.submitLocation}
+      className={`mx-auto ${classes.WeatherForm}`}>
+      <InputGroup size='lg' className={`bg-white shadow rounded mt-3 mb-4 p-1`}>
         <InputGroup.Prepend className='bg-transparent'>
-          <Button className='bg-transparent border-0' type='submit'>
-            <IosSearch />
+          <Button className='bg-transparent border-0 px-2' type='submit'>
+            <IosSearch color='#888' fontSize='1rem' />
           </Button>
         </InputGroup.Prepend>
         <FormControl
           aria-label='Location'
-          className={`border-0 bg-transparent ${classes.CustomControl}`}
+          className={`border-0 bg-transparent px-2 ${classes.CustomControl}`}
           onChange={props.changeValue}
           placeholder='Enter city or town, etc.'
+          value={props.location}
         />
       </InputGroup>
     </Form>
