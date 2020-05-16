@@ -1,7 +1,7 @@
 import React from 'react';
 
-const currentWeatherContext = React.createContext({
-  currentWeatherIcon: '',
+export const CurrentWeatherContext = React.createContext({
+  currentWeatherIcon: '09d',
   currentTemp: 0,
   currentFeelsLike: 0,
   currentSunset: 0,
@@ -9,6 +9,13 @@ const currentWeatherContext = React.createContext({
   currentRain: 0,
   currentHumidity: 0,
   currentWindSpeed: 0,
+  location: 'Select a location...',
 });
 
-export default currentWeatherContext;
+export const CurrentWeatherProvider = ({ children, value }) => {
+  return (
+    <CurrentWeatherContext.Provider value={value}>
+      {children}
+    </CurrentWeatherContext.Provider>
+  );
+};

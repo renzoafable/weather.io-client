@@ -8,83 +8,35 @@ import CurrentWeatherDate from './CurrentWeatherDate/CurrentWeatherDate';
 import CurrentWeatherTemp from './CurrentWeatherTemp/CurrentWeatherTemp';
 import CurrentWeatherMeta from './CurrentWeatherMeta/CurrentWeatherMeta';
 import CurrentWeatherDetails from './CurrentWeatherDetails/CurrentWeatherDetails';
-import CurrentWeatherDetailsItem from './CurrentWeatherDetails/CurrentWeatherDetailsItem/CurrentWeatherDetailsItem';
-import { metricToImperialSpeed } from '../../utils/conversion';
 
 const CurrentWeather = (props) => {
   console.log(props);
-  let currentWeatherDate = <CurrentWeatherDate />;
-  let currentWeatherTemp = <CurrentWeatherTemp />;
   let currentLocation = (
     <p className={`m-0 text-center ${classes.CurrentLocation}`}>
-      Select a location...
+      {props.location ? props.location : 'Select a location...'}
     </p>
   );
-  let currentMeta = <CurrentWeatherMeta />;
-  let currentWeatherDetails = (
-    <CurrentWeatherDetails>
-      <CurrentWeatherDetailsItem itemLabel='Clouds' unit='%' />
-      <CurrentWeatherDetailsItem itemLabel='Rain' unit='mm' />
-      <CurrentWeatherDetailsItem itemLabel='Humidity' unit='%' />
-      <CurrentWeatherDetailsItem itemLabel='Wind' unit='Km/h' />
-    </CurrentWeatherDetails>
-  );
-
-  if (props.location || props.data) {
-    currentWeatherDate = React.cloneElement(currentWeatherDate, {
-      weatherIcon: props.data.currentWeatherIcon,
-    });
-    // currentWeatherTemp = <CurrentWeatherTemp temp={props.data.currentTemp} />;
-    currentWeatherTemp = React.cloneElement(currentWeatherTemp, {
-      temp: props.data.currentTemp,
-    });
-    currentLocation = (
-      <p className={`m-0 text-center ${classes.CurrentLocation}`}>
-        {props.location}
-      </p>
-    );
-    currentMeta = React.cloneElement(currentMeta, {
-      feelsLike: props.data.currentFeelsLike,
-      sunset: props.data.currentSunset,
-    });
-    currentWeatherDetails = (
-      <CurrentWeatherDetails>
-        <CurrentWeatherDetailsItem
-          itemLabel='Clouds'
-          measure={props.data.currentClouds}
-          unit='%'
-        />
-        <CurrentWeatherDetailsItem
-          itemLabel='Rain'
-          measure={props.data.currentRain}
-          unit='mm'
-        />
-        <CurrentWeatherDetailsItem
-          itemLabel='Humidity'
-          measure={props.data.currentHumidity}
-          unit='%'
-        />
-        <CurrentWeatherDetailsItem
-          itemLabel='Wind'
-          measure={Math.round(
-            metricToImperialSpeed(props.data.currentWindSpeed)
-          )}
-          unit='Km/h'
-        />
-      </CurrentWeatherDetails>
-    );
-  }
 
   return (
     <Col
       xs={{ span: 12, order: 1 }}
       className={`font-color-light ${classes.CurrentWeather}`}>
       <div style={{ visibility: props.isLoading ? 'hidden' : 'visible' }}>
-        <CurrentWeatherItem>{currentWeatherDate}</CurrentWeatherItem>
-        <CurrentWeatherItem>{currentWeatherTemp}</CurrentWeatherItem>
-        <CurrentWeatherItem>{currentLocation}</CurrentWeatherItem>
-        <CurrentWeatherItem>{currentMeta}</CurrentWeatherItem>
-        <CurrentWeatherItem>{currentWeatherDetails}</CurrentWeatherItem>
+        <CurrentWeatherItem className='mb-3'>
+          <CurrentWeatherDate />
+        </CurrentWeatherItem>
+        <CurrentWeatherItem className='mb-1'>
+          <CurrentWeatherTemp />
+        </CurrentWeatherItem>
+        <CurrentWeatherItem className='mb-4'>
+          {currentLocation}
+        </CurrentWeatherItem>
+        <CurrentWeatherItem className='mb-4'>
+          <CurrentWeatherMeta />
+        </CurrentWeatherItem>
+        <CurrentWeatherItem className='mb-3'>
+          <CurrentWeatherDetails />
+        </CurrentWeatherItem>
       </div>
       <div
         className={classes.Spinner}

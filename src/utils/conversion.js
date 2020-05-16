@@ -34,3 +34,12 @@ export const unixDateToTime = (unixDate) => {
 export const metricToImperialSpeed = (speed) => {
   return speed * 3.6;
 };
+
+export const generate24HrTime = (timestamp) => {
+  const sunsetDate = unixDateToTime(timestamp);
+  return `${sunsetDate.getHours()}:${
+    sunsetDate.getMinutes().toString().length < 2
+      ? '0' + sunsetDate.getMinutes()
+      : sunsetDate.getMinutes()
+  }`;
+};

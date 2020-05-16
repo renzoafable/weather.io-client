@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import Aux from '../../hoc/Auxiliary/Auxiliary';
 import WeatherForm from '../../components/WeatherForm/WeatherForm';
 import WeatherContainer from '../../components/WeatherContainer/WeatherContainer';
 import ForecastDetails from '../../components/ForecastDetails/ForecastDetails';
 import CurrentWeather from '../../components/CurrentWeather/CurrentWeather';
+import { CurrentWeatherProvider } from '../../context/CurrentWeatherContext';
 
 class Weather extends Component {
   state = {
@@ -60,16 +60,21 @@ class Weather extends Component {
     if (this.state.weatherData) {
       forecastDetails = <ForecastDetails />;
       currentWeather = (
-        <CurrentWeather
-          isLoading={this.state.isLoading}
-          data={this.getCurrentWeatherData()}
-          location={this.state.weatherData.location}
-        />
+        <CurrentWeatherProvider value={this.getCurrentWeatherData()}>
+          <CurrentWeather
+            isLoading={this.state.isLoading}
+            location={
+              this.state.weatherData
+                ? this.state.weatherData.location
+                : this.state.location
+            }
+          />
+        </CurrentWeatherProvider>
       );
     }
 
     return (
-      <Aux>
+      <>
         <WeatherForm
           changeValue={this.inputChangeHandler}
           location={this.state.location}
@@ -79,7 +84,7 @@ class Weather extends Component {
           {forecastDetails}
           {currentWeather}
         </WeatherContainer>
-      </Aux>
+      </>
     );
   }
 }

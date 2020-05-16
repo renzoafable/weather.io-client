@@ -1,30 +1,25 @@
 import React from 'react';
 import classes from './CurrentWeatherMeta.module.css';
 
+import { CurrentWeatherContext } from '../../../context/CurrentWeatherContext';
 import dividerIcon from '../../../assets/images/divider.png';
-import { unixDateToTime } from '../../../utils/conversion';
+import { generate24HrTime } from '../../../utils/conversion';
 
-const CurrentWeatherMeta = (props) => {
-  let feelsLike, sunsetTime;
-
-  if (props.feelsLike || props.sunset) {
-    feelsLike = Math.round(props.feelsLike);
-    const sunsetDate = unixDateToTime(props.sunset);
-    sunsetTime = `${sunsetDate.getHours()}:${
-      sunsetDate.getMinutes().toString().length < 2
-        ? '0' + sunsetDate.getMinutes()
-        : sunsetDate.getMinutes()
-    }`;
-  }
-
+const CurrentWeatherMeta = () => {
   return (
-    <div className={`text-center ${classes.CurrentWeatherMeta}`}>
-      <span>Feels like {feelsLike}</span>
-      <span>
-        <img src={dividerIcon} alt='Divider' />
-      </span>
-      <span>Sunset {sunsetTime}</span>
-    </div>
+    <CurrentWeatherContext.Consumer>
+      {({ currentFeelsLike, currentSunset }) => {
+        return (
+          <div className={`text-center ${classes.CurrentWeatherMeta}`}>
+            <span>Feels like {Math.round(currentFeelsLike)}</span>
+            <span>
+              <img src={dividerIcon} alt='Divider' />
+            </span>
+            <span>Sunset {generate24HrTime(currentSunset)}</span>
+          </div>
+        );
+      }}
+    </CurrentWeatherContext.Consumer>
   );
 };
 
