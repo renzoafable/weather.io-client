@@ -1,10 +1,8 @@
 import React from 'react';
 
 const CurrentWeatherItem = (props) => {
-  const style = {
-    marginBottom: '1rem',
-  };
-  return <div style={style}>{props.children}</div>;
+  const attachedClasses = [props.className];
+  return <div className={attachedClasses.join(' ')}>{props.children}</div>;
 };
 
 export default CurrentWeatherItem;
