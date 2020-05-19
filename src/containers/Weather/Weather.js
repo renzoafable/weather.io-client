@@ -25,7 +25,7 @@ class Weather extends Component {
     try {
       this.setState({ isLoading: true }, async () => {
         const response = await fetch(
-          `http://localhost:8000/weather?address=${this.state.location}`
+          `https://renzo-weather-io.herokuapp.com/weather?address=${this.state.location}`
         );
         const data = await response.json();
         if ('error' in data) this.setState({ isLoading: false });
