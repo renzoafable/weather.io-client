@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 import WeatherForm from '../../components/WeatherForm/WeatherForm';
 import WeatherContainer from '../../components/WeatherContainer/WeatherContainer';
@@ -25,9 +24,10 @@ class Weather extends Component {
     e.preventDefault();
     try {
       this.setState({ isLoading: true }, async () => {
-        const { data } = await axios.get(
+        const response = await fetch(
           `http://localhost:8000/weather?address=${this.state.location}`
         );
+        const data = await response.json();
         if ('error' in data) this.setState({ isLoading: false });
         else this.setState({ weatherData: data, isLoading: false });
       });

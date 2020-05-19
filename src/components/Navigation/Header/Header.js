@@ -5,8 +5,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import IosMenu from 'react-ionicons/lib/IosMenu';
 import classes from './Header.module.css';
 
-import logo from '../../../assets/images/weather.png';
-
 const Header = (props) => {
   return (
     <Navbar bg='white' expand='lg' collapseOnSelect>

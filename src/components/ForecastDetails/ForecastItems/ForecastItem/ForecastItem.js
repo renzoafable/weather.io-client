@@ -42,7 +42,15 @@ const ForecastItem = (props) => {
         />
       </td>
       <td>{temp}</td>
-      <td className={classes.ForecastWind}>{wind}</td>
+      <td className={classes.ForecastWind}>
+        <Icon
+          src='http://openweathermap.org/img/wn/50d@2x.png'
+          alt='Weather icon'
+          width='3.5'
+          height='3.5'
+        />{' '}
+        {wind}
+      </td>
     </tr>
   );
 };
