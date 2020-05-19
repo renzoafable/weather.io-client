@@ -1,0 +1,19 @@
+.ForecastItem td {
+  padding-bottom: 0.5rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.ForecastWind {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .ForecastItem td {
+    padding: 0.75rem 0;
+  }
+
+  .ForecastWind {
+    display: table-cell;
+  }
+}

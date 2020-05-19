@@ -8,10 +8,10 @@ const CurrentWeatherTemp = () => {
   return (
     <CurrentWeatherContext.Consumer>
       {({ currentTemp }) => (
-        <div className='m-0 text-center d-flex align-items-top justify-content-center'>
+        <div className={classes.CurrentWeatherTemp}>
           <span className={classes.CurrentTemp}>{Math.round(currentTemp)}</span>
           <img
-            className={`mt-2 ${classes.Celsius}`}
+            className={classes.Celsius}
             src={celsiusIcon}
             alt='Celsius symbol'
           />

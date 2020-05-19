@@ -1,9 +1,24 @@
-.Logo {
+.HeaderLogo {
   width: 25px;
   height: 25px;
+}
+
+.HeaderToggle {
+  border: none;
+}
+
+.HeaderNav {
+  margin-left: auto;
+  text-align: center;
 }
 
 .NoOutline:focus {
   box-shadow: none;
   outline: 0 none;
+}
+
+@media (min-width: 1200px) {
+  .HeaderNavLink {
+    margin-left: 1.5rem;
+  }
 }

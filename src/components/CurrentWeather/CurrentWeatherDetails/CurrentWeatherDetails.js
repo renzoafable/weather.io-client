@@ -9,8 +9,8 @@ const CurrentWeatherDetails = () => {
     <CurrentWeatherContext.Consumer>
       {({ currentClouds, currentRain, currentHumidity, currentWindSpeed }) => {
         return (
-          <div className={`${classes.CurrentWeatherDetails}`}>
-            <p className='font-weight-bold mb-1'>Weather Details</p>
+          <div className={classes.CurrentWeatherDetails}>
+            <p>Weather Details</p>
             <CurrentWeatherDetailsItem
               itemLabel='Clouds'
               measure={currentClouds}
@@ -29,7 +29,7 @@ const CurrentWeatherDetails = () => {
             <CurrentWeatherDetailsItem
               itemLabel='Wind'
               measure={currentWindSpeed}
-              unit='Km/h'
+              unit='kph'
             />
           </div>
         );

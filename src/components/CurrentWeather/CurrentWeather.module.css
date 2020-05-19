@@ -3,8 +3,7 @@
   background-image: url(../../assets/images/clouds.svg);
   background-repeat: no-repeat;
   background-size: 100%;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  color: var(--light-font-color);
   padding-top: 2rem;
   position: relative;
 }
@@ -16,12 +15,34 @@
 .CurrentLocation {
   font-size: 0.8rem;
   font-weight: 300;
+  margin: 0;
+  text-align: center;
 }
 
-.Spinner {
-  visibility: hidden;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .CurrentLocation {
+    font-size: 0.75rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .CurrentWeather {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .CurrentWeather {
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .CurrentLocation {
+    font-size: 0.85rem;
+  }
 }

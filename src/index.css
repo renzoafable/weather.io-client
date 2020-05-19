@@ -6,6 +6,7 @@
   --light-font-color: #e2e2e2;
   --main-light-color: #f2fbff;
   --main-dark-color: #0c2461;
+  --secondary-dark-color: #224399;
 }
 
 body {
@@ -18,22 +19,6 @@ body {
   color: #5e5e5e;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.bg-main-dark {
-  background-color: var(--main-dark-color);
-}
-
-.bg-main-light {
-  background-color: var(--main-light-color);
-}
-
-.font-color-light {
-  color: var(--light-font-color) !important;
-}
-
-.font-color-dark {
-  color: var(--dark-font-color) !important;
 }
 
 /* Small devices (landscape phones, 576px and up) */

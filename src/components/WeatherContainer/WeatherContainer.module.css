@@ -1,0 +1,12 @@
+.WeatherContainer {
+  padding: 0;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .WeatherContainer {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    margin-bottom: 3rem;
+    width: 80%;
+  }
+}

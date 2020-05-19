@@ -9,11 +9,13 @@ class Layout extends Component {
   render() {
     return (
       <div className={classes.Layout}>
-        <Header showModal={this.showModalHandler} />
-        <div className={classes.MainContent}>
-          <Container>{this.props.children}</Container>
-        </div>
-        <Footer />
+        <Header />
+
+        <Container fluid className={classes.MainContent}>
+          {this.props.children}
+        </Container>
+
+        {/* <Footer /> */}
       </div>
     );
   }

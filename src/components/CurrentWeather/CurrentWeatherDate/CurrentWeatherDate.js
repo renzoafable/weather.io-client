@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './CurrentWeatherDate.module.css';
 
+import Icon from '../../../ui/Icon/Icon';
 import { getCurrentDate } from '../../../utils/conversion';
 import { CurrentWeatherContext } from '../../../context/CurrentWeatherContext';
 
@@ -10,15 +11,16 @@ const CurrentWeatherDate = () => {
   return (
     <CurrentWeatherContext.Consumer>
       {({ currentWeatherIcon }) => (
-        <div className='d-flex align-items-center justify-content-center'>
-          <img
-            className={classes.CurrentWeatherDateIcon}
-            src={`http://openweathermap.org/img/wn/${currentWeatherIcon}@2x.png`}
+        <div className={classes.CurrentWeatherDate}>
+          <Icon
+            src={currentWeatherIcon}
             alt='Weather icon'
+            width='4.5'
+            height='4.5'
           />
-          <div className='d-flex flex-column align-items-center justify-content-center'>
-            <p className={`m-0 ${classes.Today}`}>Today</p>
-            <p className={`m-0 ${classes.CurrDate}`}>{currentDate}</p>
+          <div className={classes.CurrentDateInfo}>
+            <p className={classes.Today}>Today</p>
+            <p className={classes.CurrDate}>{currentDate}</p>
           </div>
         </div>
       )}

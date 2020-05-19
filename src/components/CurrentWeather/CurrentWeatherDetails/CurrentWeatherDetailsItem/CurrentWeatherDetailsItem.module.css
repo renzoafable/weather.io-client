@@ -1,9 +1,30 @@
 .CurrentWeatherDetailsItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem auto;
   width: 85%;
 }
 
 .DottedDivider {
   border-bottom: 2px dotted #888;
-  height: 2px;
   flex-grow: 1;
+  height: 2px;
+  margin: 0 1rem;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .CurrentWeatherDetailsItem {
+    font-size: 0.8rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .CurrentWeatherDetailsItem {
+    font-size: 0.9rem;
+    margin: 1rem auto;
+    width: 100%;
+  }
 }

@@ -5,7 +5,10 @@ import WeatherForm from '../../components/WeatherForm/WeatherForm';
 import WeatherContainer from '../../components/WeatherContainer/WeatherContainer';
 import ForecastDetails from '../../components/ForecastDetails/ForecastDetails';
 import CurrentWeather from '../../components/CurrentWeather/CurrentWeather';
-import { CurrentWeatherProvider } from '../../context/CurrentWeatherContext';
+import {
+  CurrentWeatherProvider,
+  ForecastProvider,
+} from '../../context/CurrentWeatherContext';
 
 class Weather extends Component {
   state = {
@@ -25,7 +28,6 @@ class Weather extends Component {
         const { data } = await axios.get(
           `http://localhost:8000/weather?address=${this.state.location}`
         );
-        console.log(data);
         if ('error' in data) this.setState({ isLoading: false });
         else this.setState({ weatherData: data, isLoading: false });
       });
@@ -34,33 +36,19 @@ class Weather extends Component {
     }
   };
 
-  getCurrentWeatherData = () => {
-    return {
-      currentWeatherIcon: this.state.weatherData.currentWeatherData.weather[0]
-        .icon,
-      currentTemp: this.state.weatherData.currentWeatherData.main.temp,
-      currentFeelsLike: this.state.weatherData.currentWeatherData.main
-        .feels_like,
-      currentSunset: this.state.weatherData.currentWeatherData.sys.sunset,
-      currentClouds: this.state.weatherData.currentWeatherData.clouds.all,
-      currentRain: this.state.weatherData.currentWeatherData.rain
-        ? Object.values(
-            this.state.weatherData.currentWeatherData.rain
-          )[0].toFixed(2)
-        : 0,
-      currentHumidity: this.state.weatherData.currentWeatherData.main.humidity,
-      currentWindSpeed: this.state.weatherData.currentWeatherData.wind.speed,
-    };
-  };
-
   render() {
-    let forecastDetails = <ForecastDetails />;
+    let forecastDetails = <ForecastDetails isLoading={this.state.isLoading} />;
     let currentWeather = <CurrentWeather isLoading={this.state.isLoading} />;
 
     if (this.state.weatherData) {
-      forecastDetails = <ForecastDetails />;
+      forecastDetails = (
+        <ForecastProvider value={this.state.weatherData.forecastData}>
+          <ForecastDetails isLoading={this.state.isLoading} />
+        </ForecastProvider>
+      );
       currentWeather = (
-        <CurrentWeatherProvider value={this.getCurrentWeatherData()}>
+        <CurrentWeatherProvider
+          value={this.state.weatherData.currentWeatherData}>
           <CurrentWeather
             isLoading={this.state.isLoading}
             location={

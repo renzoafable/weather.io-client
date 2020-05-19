@@ -1,5 +1,5 @@
-const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-const MONTHS = [
+export const DAYS_ABBR = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+export const MONTHS = [
   'Jan',
   'Feb',
   'Mar',
@@ -14,13 +14,23 @@ const MONTHS = [
   'Dec',
 ];
 
-export const getCurrentDate = () => {
-  const date = new Date();
-  const currentDate = `${DAYS[date.getDay()]}, ${date.getDate()} ${
-    MONTHS[date.getMonth()]
-  }`;
+export const getDay = (timestamp) => {
+  const date = timestamp ? new Date(timestamp * 1000) : new Date(Date.now());
+  return DAYS_ABBR[date.getUTCDay()];
+};
 
-  return currentDate;
+export const getMonth = () => {
+  const date = new Date();
+  return MONTHS[date.getMonth()];
+};
+
+export const getDate = () => {
+  const date = new Date();
+  return date.getDate();
+};
+
+export const getCurrentDate = () => {
+  return `${getDay()}, ${getDate()} ${getMonth()}`;
 };
 
 export const kelvinToCelsius = (kelvin) => {

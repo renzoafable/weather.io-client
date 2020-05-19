@@ -1,19 +1,38 @@
-.CurrentWeatherDateIcon {
-  width: 60px;
-  height: 60px;
+.CurrentWeatherDate,
+.CurrentDateInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CurrentDateInfo {
+  flex-direction: column;
 }
 
 .Today,
 .CurrDate {
   line-height: 150%;
+  margin: 0;
   text-align: left;
 }
 
 .Today {
   font-size: 1.3rem;
+  font-weight: 300;
 }
 
 .CurrDate {
   font-size: 0.7rem;
   font-weight: 300;
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .Today {
+    font-size: 1.6rem;
+  }
+
+  .CurrDate {
+    font-size: 0.75rem;
+  }
 }

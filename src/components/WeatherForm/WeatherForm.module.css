@@ -1,14 +1,46 @@
 .WeatherForm {
   width: 90%;
+  margin: 1rem auto 2rem auto;
 }
 
-.CustomControl:focus {
+.WeatherFormGroup {
+  background-color: transparent;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+}
+
+.WeatherFormGroupPrepend {
+  background-color: transparent;
+}
+
+.WeatherFormGroupButton {
+  background-color: transparent;
+  border: none;
+  padding: 0 1rem;
+}
+
+.WeatherFormControl {
+  border: none;
+  background-color: transparent;
+  padding: 0 1rem;
+}
+
+.WeatherFormControl:focus {
   box-shadow: none;
   outline: 0 none;
 }
 
+@media (min-width: 576px) {
+  .WeatherForm {
+    margin-top: 1rem;
+    width: 80%;
+  }
+}
+
 @media (min-width: 768px) {
   .WeatherForm {
+    margin: 2rem auto;
     width: 70%;
   }
 }
@@ -21,6 +53,7 @@
 
 @media (min-width: 1200px) {
   .WeatherForm {
-    width: 55%;
+    margin: 3rem auto 3.5rem auto;
+    width: 40%;
   }
 }

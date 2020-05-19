@@ -1,3 +1,10 @@
+.CurrentWeatherTemp {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  text-align: center;
+}
+
 .CurrentTemp {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 7.5rem;

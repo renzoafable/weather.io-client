@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const CurrentWeatherContext = React.createContext({
-  currentWeatherIcon: '09d',
+  currentWeatherIcon: `http://openweathermap.org/img/wn/02d@2x.png`,
   currentTemp: 0,
   currentFeelsLike: 0,
   currentSunset: 0,
@@ -17,5 +17,15 @@ export const CurrentWeatherProvider = ({ children, value }) => {
     <CurrentWeatherContext.Provider value={value}>
       {children}
     </CurrentWeatherContext.Provider>
+  );
+};
+
+export const ForecastContext = React.createContext([]);
+
+export const ForecastProvider = ({ children, value }) => {
+  return (
+    <ForecastContext.Provider value={value}>
+      {children}
+    </ForecastContext.Provider>
   );
 };

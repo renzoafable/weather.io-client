@@ -9,20 +9,32 @@ import logo from '../../../assets/images/weather.png';
 
 const Header = (props) => {
   return (
-    <Navbar bg='white' expand='lg' className='shadow-sm' collapseOnSelect>
+    <Navbar bg='white' expand='lg' collapseOnSelect>
       <Container>
-        <Navbar.Brand href='#'>
-          <img className={classes.Logo} src={logo} alt='Logo' />
-        </Navbar.Brand>
-        <Navbar.Toggle className='border-0' aria-controls='navbar-nav'>
+        <Navbar.Toggle
+          className={classes.HeaderToggle}
+          aria-controls='navbar-nav'>
           <IosMenu />
         </Navbar.Toggle>
         <Navbar.Collapse id='navbar-nav'>
-          <Nav className='ml-auto text-center'>
+          <Nav className={classes.HeaderNav}>
             <Nav.Link
               href='https://github.com/renzoafable/weathrr'
-              target='_blank'>
+              target='_blank'
+              className={classes.HeaderNavLink}>
               Source
+            </Nav.Link>
+            <Nav.Link
+              href='https://www.linkedin.com/in/renzoafable/'
+              target='_blank'
+              className={classes.HeaderNavLink}>
+              LinkedIn
+            </Nav.Link>
+            <Nav.Link
+              href='https://github.com/renzoafable'
+              target='_blank'
+              className={classes.HeaderNavLink}>
+              Github
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

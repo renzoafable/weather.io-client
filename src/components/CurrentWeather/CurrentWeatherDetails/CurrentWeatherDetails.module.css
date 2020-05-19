@@ -1,0 +1,43 @@
+.CurrentWeatherDetails p {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .CurrentWeatherDetails {
+    margin: 0 auto;
+    width: 80%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .CurrentWeatherDetails {
+    margin: 0 auto;
+    width: 70%;
+  }
+
+  .CurrentWeatherDetails p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .CurrentWeatherDetails {
+    width: 90%;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .CurrentWeatherDetails {
+    width: 80%;
+  }
+
+  .CurrentWeatherDetails p {
+    font-size: 1rem;
+  }
+}

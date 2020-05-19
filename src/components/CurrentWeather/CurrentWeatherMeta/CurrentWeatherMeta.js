@@ -10,7 +10,7 @@ const CurrentWeatherMeta = () => {
     <CurrentWeatherContext.Consumer>
       {({ currentFeelsLike, currentSunset }) => {
         return (
-          <div className={`text-center ${classes.CurrentWeatherMeta}`}>
+          <div className={classes.CurrentWeatherMeta}>
             <span>Feels like {Math.round(currentFeelsLike)}</span>
             <span>
               <img src={dividerIcon} alt='Divider' />
