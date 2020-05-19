@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './CurrentWeatherDetails.module.css';
 
-import CurrentWeatherDetailsItem from './CurrentWeatherDetailsItem/CurrentWeatherDetailsItem';
+import CurrentWeatherDetailsItem from './CurrentWeatherDetailsItem/CurrentDetailsItem';
 import { CurrentWeatherContext } from '../../../context/CurrentWeatherContext';
 
 const CurrentWeatherDetails = () => {

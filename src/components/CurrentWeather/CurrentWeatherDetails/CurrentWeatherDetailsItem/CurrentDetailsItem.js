@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './CurrentWeatherDetailsItem.module.css';
+import classes from './CurrentDetailsItem.module.css';
 
 const CurrentWeatherDetailsItem = (props) => {
   return (
