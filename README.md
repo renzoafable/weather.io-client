@@ -30,3 +30,6 @@ The application is deployed using [Github Pages](https://www.netlify.com/) and i
 - [React](https://reactjs.org/docs/getting-started.html) - The web framework used
 - [Yarn](https://classic.yarnpkg.com/en/) - Dependency Management
 - [React Bootstrap](https://react-bootstrap.github.io/) - The frontend framework used.
+
+## Server
+The source code for the server can be found [here](https://github.com/renzoafable/weather.io-api).
