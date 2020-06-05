@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './CurrentWeatherTemp.module.css';
 
 import celsiusIcon from '../../../assets/images/celsius.png';
-import { CurrentWeatherContext } from '../../../context/CurrentWeatherContext';
+import { CurrentWeatherContext } from '../../../context/WeatherContext';
 
 const CurrentWeatherTemp = () => {
   return (

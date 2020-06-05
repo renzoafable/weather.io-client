@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table';
 import classes from './ForecastItems.module.css';
 
 import ForecastItem from './ForecastItem/ForecastItem';
-import { ForecastContext } from '../../../context/CurrentWeatherContext';
+import { ForecastContext } from '../../../context/WeatherContext';
 
 const ForecastItems = () => {
   let forecastItems = (

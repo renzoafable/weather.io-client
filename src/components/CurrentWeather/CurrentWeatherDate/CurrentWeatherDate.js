@@ -3,7 +3,7 @@ import classes from './CurrentWeatherDate.module.css';
 
 import Icon from '../../../ui/Icon/Icon';
 import { getCurrentDate } from '../../../utils/conversion';
-import { CurrentWeatherContext } from '../../../context/CurrentWeatherContext';
+import { CurrentWeatherContext } from '../../../context/WeatherContext';
 
 const CurrentWeatherDate = () => {
   const currentDate = getCurrentDate();

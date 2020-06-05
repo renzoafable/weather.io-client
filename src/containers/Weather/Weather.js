@@ -7,7 +7,7 @@ import CurrentWeather from '../../components/CurrentWeather/CurrentWeather';
 import {
   CurrentWeatherProvider,
   ForecastProvider,
-} from '../../context/CurrentWeatherContext';
+} from '../../context/WeatherContext';
 
 class Weather extends Component {
   state = {

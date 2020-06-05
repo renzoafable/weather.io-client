@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './CurrentWeatherMeta.module.css';
 
-import { CurrentWeatherContext } from '../../../context/CurrentWeatherContext';
+import { CurrentWeatherContext } from '../../../context/WeatherContext';
 import dividerIcon from '../../../assets/images/divider.png';
 import { generate24HrTime } from '../../../utils/conversion';
 

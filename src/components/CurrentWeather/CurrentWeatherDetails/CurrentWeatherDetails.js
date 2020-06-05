@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './CurrentWeatherDetails.module.css';
 
 import CurrentWeatherDetailsItem from './CurrentWeatherDetailsItem/CurrentDetailsItem';
-import { CurrentWeatherContext } from '../../../context/CurrentWeatherContext';
+import { CurrentWeatherContext } from '../../../context/WeatherContext';
 
 const CurrentWeatherDetails = () => {
   return (
