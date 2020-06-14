@@ -1,29 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import classes from './ForecastItems.module.css';
 
 import ForecastItem from './ForecastItem/ForecastItem';
-import { ForecastContext } from '../../../context/WeatherContext';
 
-const ForecastItems = () => {
-  let forecastItems = (
-    <ForecastContext.Consumer>
-      {(context) => {
-        if (!context.length) {
-          const itemList = Array.from(new Array(5));
-          return itemList.map((_, i) => {
-            return <ForecastItem key={i} />;
-          });
-        } else {
-          return context.map((forecastItem, i) => (
-            <ForecastItem key={i} data={forecastItem} />
-          ));
-        }
-      }}
-    </ForecastContext.Consumer>
-  );
+const ForecastItems = ({ forecastData }) => {
+  const [forecastItems, setItems] = useState([]);
 
-  return (
+  useEffect(() => {
+    setItems(() => [...forecastData]);
+  }, [forecastData]);
+
+  return forecastData.length ? (
     <Table
       responsive='sm'
       borderless
@@ -46,8 +34,16 @@ const ForecastItems = () => {
           </th>
         </tr>
       </thead>
-      <tbody>{forecastItems}</tbody>
+      <tbody>
+        {forecastItems.map((forecastItem, i) => (
+          <ForecastItem key={i} data={forecastItem} />
+        ))}
+      </tbody>
     </Table>
+  ) : (
+    <div className={classes.Placeholder}>
+      <p>Select a location...</p>
+    </div>
   );
 };
 

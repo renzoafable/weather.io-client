@@ -1,31 +1,47 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 
-export const CurrentWeatherContext = React.createContext({
-  currentWeatherIcon: `http://openweathermap.org/img/wn/02d@2x.png`,
-  currentTemp: 0,
-  currentFeelsLike: 0,
-  currentSunset: 0,
-  currentClouds: 0,
-  currentRain: 0,
-  currentHumidity: 0,
-  currentWindSpeed: 0,
-  location: 'Select a location...',
-});
+export const WeatherContext = React.createContext();
 
-export const CurrentWeatherProvider = ({ children, value }) => {
+export const WeatherProvider = ({ children }) => {
+  const [currentWeatherData, setCurrentWeatherData] = useState(null);
+  const [forecastData, setForecastData] = useState([]);
+  const [location, setLocation] = useState('');
+  const [isLoading, setLoading] = useState(false);
+
+  const fetchWeatherData = useCallback(async (location) => {
+    try {
+      setLoading(true);
+      const response = await fetch(
+        `https://renzo-weather-io.herokuapp.com/weather?address=${location}`
+      );
+      const data = await response.json();
+      if ('error' in data) setLoading(false);
+      else {
+        const {
+          currentWeatherData: currentWeather,
+          forecastData,
+          location,
+        } = data;
+        setCurrentWeatherData(currentWeather);
+        setForecastData(() => [...forecastData]);
+        setLocation(location);
+        setLoading(false);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   return (
-    <CurrentWeatherContext.Provider value={value}>
+    <WeatherContext.Provider
+      value={{
+        currentWeatherData,
+        forecastData,
+        location,
+        isLoading,
+        fetchWeatherData,
+      }}>
       {children}
-    </CurrentWeatherContext.Provider>
-  );
-};
-
-export const ForecastContext = React.createContext([]);
-
-export const ForecastProvider = ({ children, value }) => {
-  return (
-    <ForecastContext.Provider value={value}>
-      {children}
-    </ForecastContext.Provider>
+    </WeatherContext.Provider>
   );
 };

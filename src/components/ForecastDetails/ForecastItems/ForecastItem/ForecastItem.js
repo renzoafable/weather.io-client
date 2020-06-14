@@ -4,20 +4,12 @@ import classes from './ForecastItem.module.css';
 import Icon from '../../../../ui/Icon/Icon';
 import { getDay } from '../../../../utils/conversion';
 
-const ForecastItem = (props) => {
-  let rain = 0;
-  let temp = 0;
-  let icon = '02d';
-  let wind = 0;
-  let day = getDay();
-
-  if (props.data) {
-    day = getDay(props.data.dt);
-    rain = props.data.rain ? Object.values(props.data.rain)[0] : 0;
-    temp = props.data.main.temp;
-    icon = props.data.weather[0].icon;
-    wind = props.data.wind.speed;
-  }
+const ForecastItem = ({ data }) => {
+  const day = getDay(data.dt);
+  const rain = data.rain ? Object.values(data.rain)[0] : 0;
+  const temp = data.main.temp;
+  const wind = data.wind.speed;
+  const icon = data.weather[0].icon;
 
   return (
     <tr className={classes.ForecastItem}>
@@ -56,3 +48,11 @@ const ForecastItem = (props) => {
 };
 
 export default ForecastItem;
+
+ForecastItem.defaultProps = {
+  rain: 0,
+  temp: 0,
+  icon: '02d',
+  wind: 0,
+  day: getDay(),
+};

@@ -1,3 +1,9 @@
+.CurrentWeatherTemp,
+.CurrentLocation,
+.CurrentWeatherMeta {
+  margin: 1.5rem 0;
+}
+
 .CurrentWeatherMeta {
   font-size: 0.8rem;
   font-weight: 300;
@@ -12,9 +18,46 @@
   width: 4px;
 }
 
+.CurrentWeatherTemp {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  text-align: center;
+}
+
+.CurrentTemp {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 7.5rem;
+  font-weight: 300;
+  line-height: 90%;
+}
+
+.Celsius {
+  width: 25px;
+  height: 25px;
+}
+
+.CurrentLocation {
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin: 0;
+  text-align: center;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .CurrentLocation {
+    font-size: 0.75rem;
+  }
+}
+
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .CurrentWeatherMeta {
     font-size: 0.8rem;
+  }
+
+  .CurrentLocation {
+    font-size: 0.85rem;
   }
 }
