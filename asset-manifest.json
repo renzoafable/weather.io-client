@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/weather.io-client/static/css/main.d0b13ec3.chunk.css",
-    "main.js": "/weather.io-client/static/js/main.178f99bc.chunk.js",
-    "main.js.map": "/weather.io-client/static/js/main.178f99bc.chunk.js.map",
-    "runtime-main.js": "/weather.io-client/static/js/runtime-main.ea9c0c35.js",
-    "runtime-main.js.map": "/weather.io-client/static/js/runtime-main.ea9c0c35.js.map",
+    "main.css": "/weather.io-client/static/css/main.f8402044.chunk.css",
+    "main.js": "/weather.io-client/static/js/main.e437b483.chunk.js",
+    "main.js.map": "/weather.io-client/static/js/main.e437b483.chunk.js.map",
+    "runtime-main.js": "/weather.io-client/static/js/runtime-main.08f3676c.js",
+    "runtime-main.js.map": "/weather.io-client/static/js/runtime-main.08f3676c.js.map",
     "static/css/2.af3c1da9.chunk.css": "/weather.io-client/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.58dd9588.chunk.js": "/weather.io-client/static/js/2.58dd9588.chunk.js",
-    "static/js/2.58dd9588.chunk.js.map": "/weather.io-client/static/js/2.58dd9588.chunk.js.map",
+    "static/js/2.54ef71d9.chunk.js": "/weather.io-client/static/js/2.54ef71d9.chunk.js",
+    "static/js/2.54ef71d9.chunk.js.map": "/weather.io-client/static/js/2.54ef71d9.chunk.js.map",
     "index.html": "/weather.io-client/index.html",
-    "precache-manifest.cc0f76197dcc0c5299fb10a201fe8b4d.js": "/weather.io-client/precache-manifest.cc0f76197dcc0c5299fb10a201fe8b4d.js",
+    "precache-manifest.211070dfe79250c7b76a545ee354f92c.js": "/weather.io-client/precache-manifest.211070dfe79250c7b76a545ee354f92c.js",
     "service-worker.js": "/weather.io-client/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/weather.io-client/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.d0b13ec3.chunk.css.map": "/weather.io-client/static/css/main.d0b13ec3.chunk.css.map",
-    "static/js/2.58dd9588.chunk.js.LICENSE.txt": "/weather.io-client/static/js/2.58dd9588.chunk.js.LICENSE.txt",
+    "static/css/main.f8402044.chunk.css.map": "/weather.io-client/static/css/main.f8402044.chunk.css.map",
+    "static/js/2.54ef71d9.chunk.js.LICENSE.txt": "/weather.io-client/static/js/2.54ef71d9.chunk.js.LICENSE.txt",
     "static/media/CurrentWeather.module.css": "/weather.io-client/static/media/clouds.93e010d2.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ea9c0c35.js",
+    "static/js/runtime-main.08f3676c.js",
     "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.58dd9588.chunk.js",
-    "static/css/main.d0b13ec3.chunk.css",
-    "static/js/main.178f99bc.chunk.js"
+    "static/js/2.54ef71d9.chunk.js",
+    "static/css/main.f8402044.chunk.css",
+    "static/js/main.e437b483.chunk.js"
   ]
 }
